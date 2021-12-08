@@ -1,17 +1,17 @@
 
 <template>
-  <div>
-    <h1>
-      {{ title }}
-    </h1>
-  </div>
+	<HolaMundo></HolaMundo>
 </template>
 
 <script>
+import Holamundo from "./components/Holamundo.vue";
+
   export default {
+	components: {
+		Holamundo
+	},
     data() {
       return {
-        title: "hola mundo"
       }
     }
   }
