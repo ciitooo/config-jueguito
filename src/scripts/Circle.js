@@ -1,5 +1,4 @@
 import canvasHeight from './canvasHeight.js';
-import { ctx } from '../GamePage.vue';
 const heightCanvas = canvasHeight(85);
 const heightRectangles = ((heightCanvas * 10) / 100);
 const posRectStart = (heightCanvas - heightRectangles);
@@ -13,17 +12,17 @@ class Circle{
 		this.y = y;
 		this.move = true;
 	}
-	draw = function(){
-		ctx.fillStyle = '#FFF';
+	draw(){
 		ctx.arc(this.x, this.y, 20,0, 2 * Math.PI);
+		ctx.fillStyle = '#FFF';
 		ctx.fill();
 		ctx.stroke();
 	};
-	drag = function(x, y){
+	drag(x, y){
 		this.x = x;
 		this.y = y;
 	};
-	stop = function() {
+	stop(){
 		if (this.move == false) {
 			this.x = 150;
 			this.y = posCircleStart;
@@ -31,6 +30,6 @@ class Circle{
 	};
 };
 
-const circle = new Circle(150, posCircleStart)
+const circle = new Circle(150, posCircleStart);
 
-export default circle;
+export default circle
